@@ -6,16 +6,11 @@ fn main() -> std::process::ExitCode {
         Some(x) => x,
         _ => return usage_error_exit_code,
     };
-    let sleep_time = match sleep_time_str.parse::<i64>() {
-        Ok(x) => {
-            if x < 0 {
-                return usage_error_exit_code;
-            }
-            x
-        }
+    let sleep_time = match sleep_time_str.parse::<u64>() {
+        Ok(x) => x,
         _ => return usage_error_exit_code,
     };
-    std::thread::sleep(std::time::Duration::from_micros(sleep_time as u64));
+    std::thread::sleep(std::time::Duration::from_micros(sleep_time));
 
     std::process::ExitCode::SUCCESS
 }
