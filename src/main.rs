@@ -14,7 +14,7 @@ fn main() -> std::process::ExitCode {
     };
 
     const SLEEP_OVERHEAD: std::time::Duration = std::time::Duration::from_nanos(100);
-    let processing_time = std::time::Instant::now() - start_time + SLEEP_OVERHEAD;
+    let processing_time = start_time.elapsed() + SLEEP_OVERHEAD;
 
     if sleep_time > processing_time {
         std::thread::sleep(sleep_time - processing_time);
