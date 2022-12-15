@@ -2,6 +2,10 @@
 name = "usleep"
 version = "0.1.0"
 edition = "2021"
+authors = ["Chocobo1 <https://github.com/Chocobo1>"]
+description = "Sleep microseconds"
+homepage = "https://github.com/Chocobo1/usleep"
+license = "GPL-3.0+"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
